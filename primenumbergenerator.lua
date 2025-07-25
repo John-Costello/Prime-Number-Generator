@@ -3,17 +3,17 @@
 LIMIT=1000000
 numberMayBePrime={}
 for n = 0, LIMIT do
-   numberMayBePrime[n]=1
+    numberMayBePrime[n]=true
 end
 
-numberMayBePrime[0]=0
-numberMayBePrime[1]=0
+numberMayBePrime[0]=false
+numberMayBePrime[1]=false
 
 for n = 0, LIMIT do
-    if numberMayBePrime[n]==1 then
+    if numberMayBePrime[n]==true then
         print(n)
-        for m = n*2, LIMIT, n do
-            numberMayBePrime[m]=0
+        for m =n*2, LIMIT, n do
+            numberMayBePrime[m]=false
         end
     end
 end
