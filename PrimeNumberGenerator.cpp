@@ -1,0 +1,26 @@
+// Prime number generator using the Sieve of Eratosthenes algorithm.
+
+#include <iostream> 
+#define LIMIT 1000000
+using namespace std;
+bool numberMayBePrime[LIMIT];
+
+int main()
+{ 
+    for(int n=0; n<LIMIT; n++) {
+        numberMayBePrime[n] = true;
+    }
+
+    numberMayBePrime[0] = false;
+    numberMayBePrime[1] = false;
+    for(int n=2; n<LIMIT; n++) {
+        if(numberMayBePrime[n] == true) {
+            cout<<n<<endl;
+            for(int m=n*2; m<LIMIT; m+=n) {
+                numberMayBePrime[m] = false;
+            }
+        }
+    }
+    cout<<"End of program!"<<endl;
+    return 0;
+}
